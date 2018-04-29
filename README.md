@@ -1,5 +1,4 @@
 # JSplice
-----
 
 JSplice is a java class hotpatcher CLI powered by javassist
   1. Acquire jsplice patch file
@@ -33,9 +32,9 @@ The patches are written in JSON. An example patch might look like this:
   }]
 }]
 ```
-The above patch will replace^1^ the method `myTargetMethod` in `com.example.app.TargetClass`, thus the original method `myTargetMethod` will never be called.
+The above patch will replace<sup>1</sup> the method `myTargetMethod` in `com.example.app.TargetClass`, thus the original method `myTargetMethod` will never be called.
 
-^1^ `type 0` is method replacement
+<sup>1</sup> `type 0` is method replacement
 
 ----
 Alternatively, you can append to existing methods instead of replacing it entirely:
@@ -52,9 +51,9 @@ Alternatively, you can append to existing methods instead of replacing it entire
   }]
 }]
 ```
-That one would append^1^ `body` to `myTargetMethod` of `com.example.app.TargetClass` by renaming the original method and inserting a new method calling the original under the original name. The return value of the original method will be available in `jsplice_result`, which always has the type of the original rval. Thus our patched method ends up printing the original rval^(boolean)^ and `return`ing `true` to the caller.
+That one would append<sup>1</sup> `body` to `myTargetMethod` of `com.example.app.TargetClass` by renaming the original method and inserting a new method calling the original under the original name. The return value of the original method will be available in `jsplice_result`, which always has the type of the original rval. Thus our patched method ends up printing the original rval<sup>(boolean)</sup> and `return`ing `true` to the caller.
 
-^1^ `type 1` is method wrapping^(appending)^
+<sup>1</sup> `type 1` is method wrapping<sup>(appending)</sup>
 
 ### Commandline options
 `-import`: Classpath to import, can be specified multiple times, should contain your patch targets and patch dependencies
@@ -74,10 +73,10 @@ TODO, lol
 
 ### Tech
 JSplice uses a number of open source projects to work properly:
-* JCommander ^com.beust.jcommander^ - Command line parsing
-* Javassist ^org.javassist.javassist^ - Hotpatching
-* GSON ^com.google.code.gson^ - JSON parsing of jsplice patch files
-* commons-io ^org.apache.commons.commons-io^ - IO utility functions
+* JCommander <sup>com.beust.jcommander</sup> - Command line parsing
+* Javassist <sup>org.javassist.javassist</sup> - Hotpatching
+* GSON <sup>com.google.code.gson</sup> - JSON parsing of jsplice patch files
+* commons-io <sup>org.apache.commons.commons-io</sup> - IO utility functions
 
 ### Compilation
 
